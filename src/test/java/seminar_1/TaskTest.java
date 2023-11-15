@@ -1,4 +1,4 @@
-package task1;
+package seminar_1;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
