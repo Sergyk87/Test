@@ -10,24 +10,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserRepositoryTest {
 
+    User user;
     UserRepository userRepository;
     UserRepository userRepositoryMock;
     @BeforeEach
     void setUp() {
-        User user = new User("Иван Петров", "ipetrov@yandex.ru");
+        user = new User("Иван Петров", "ipetrov@yandex.ru");
         userRepositoryMock = mock(UserRepository.class);
+        userRepository = new UserRepository();
     }
 
     @AfterEach
     void tearDown() {
+        user = null;
         userRepository = null;
     }
 
     @Test
     void addUser() {
+        userRepositoryMock.addUser(user);
+        verify(userRepositoryMock).addUser(user);
     }
 
     @Test
     void getUserByUsername() {
+        userRepository.addUser(user);
+        assertEquals(user, userRepository.getUserByUsername("Иван Петров"));
     }
 }

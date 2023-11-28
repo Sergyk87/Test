@@ -28,31 +28,31 @@ import unittest
 class TestCalculator(unittest.TestCase):
 
     def setUp(self):
-        self.calc = Calculator()
+        self.calculator = Calculator()
 
     def tearDown(self):
         # Дополнительный код очистки, если необходимо
         pass
 
     def test_add(self):
-        result = self.calc.add(5, 3)
+        result = self.calculator.add(5, 3)
         self.assertEqual(result, 8, "Сложение работает неверно")
 
     def test_subtract(self):
-        result = self.calc.subtract(10, 4)
+        result = self.calculator.subtract(10, 4)
         self.assertEqual(result, 6, "Вычитание работает неверно")
 
     def test_multiply(self):
-        result = self.calc.multiply(2, 3)
+        result = self.calculator.multiply(2, 3)
         self.assertEqual(result, 6, "Умножение работает неверно")
 
     def test_divide(self):
-        result = self.calc.divide(5, 1)
+        result = self.calculator.divide(5, 1)
         self.assertEqual(result, 5, "Деление работает неверно")
 
     def test_divide_by_zero(self):
         with self.assertRaises(ValueError):
-            self.calc.divide(5, 0)
+            self.calculator.divide(5, 0)
 
     @unittest.skip("Пропустить этот тест")
     def test_skip_example(self):
@@ -64,7 +64,7 @@ class TestCalculator(unittest.TestCase):
 
     @unittest.expectedFailure
     def test_expected_failure(self):
-        result = self.calc.add(2, 2)
+        result = self.calculator.add(2, 2)
         self.assertEqual(result, 5, "Ожидаемое провалено")
 
 
