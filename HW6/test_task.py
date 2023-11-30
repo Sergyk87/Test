@@ -1,4 +1,5 @@
 import unittest
+import pytest
 
 from task import ListComparator
 
@@ -22,5 +23,3 @@ class test_list_comparator(unittest.TestCase):
         list2 = []
         comparator = ListComparator(list1, list2)
         assert comparator.compare_lists() == "Средние значения равны"
-
-
